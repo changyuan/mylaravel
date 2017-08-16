@@ -1,0 +1,15 @@
+// @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+
+$fontsize: 16px;
+$black-light: #222;
+font {
+   font-size: $fontsize;
+   color: $black-light;
+}
+
+.sidemenu {
+  color: $black-light;
+  font-size: $fontsize;
+  list-style: decimal;;
+  padding: 3px;
+}

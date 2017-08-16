@@ -1,0 +1,74 @@
+db.users.insertOne(
+   {
+      name: "sue",
+      age: 26,
+      status: "pending"
+   }
+)
+
+db.users.insert(
+   {
+      name: "sue",
+      age: 26,
+      status: "pending"
+   }
+)
+
+
+
+db.users.insertMany(
+    [
+     { name: "sue", age: 26, status: "pending" },
+     { name: "bob", age: 25, status: "enrolled" },
+     { name: "ann", age: 28, status: "enrolled" }
+   ]
+)
+
+//更新单个
+db.users.updateOne(
+   { age: { $lt: 18 } },
+   { $set: { status: "reject" } }
+)
+
+
+//更新多个
+db.users.updateMany(
+   { age: { $lt: 18 } },
+   { $set: { status: "reject" } }
+)
+
+
+db.users.replaceOne(
+   { name: "sue" },
+   { name: "amy", age : 25, score: "enrolled" }
+)
+
+
+
+
+db.users.update(
+   { age: { $gt: 18 } },
+   { $set: { status: "A" } },
+   { multi: true }   //是否多条
+)
+
+
+
+db.users.deleteOne(
+   { status: "reject" }
+)
+
+
+db.users.deleteMany(
+   { status: "reject" }
+)
+
+
+db.users.remove(
+   { status: "D" }
+)
+
+
+db.users.find( {age:18} , {name:1,_id:0} )
+
+db.users.find( { "user_id": { $lt: 42 } }, { "history": 0 } )
